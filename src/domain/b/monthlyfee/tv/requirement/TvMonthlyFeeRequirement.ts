@@ -16,7 +16,7 @@ export class TvMonthlyFeeRequirement {
       return false;
     }
 
-    if(!this.memberAndCourse.isActive(this.invoice.useYearMonth)) {
+    if(!this.memberAndCourse.isActive(this.invoice.useYearMonth.value)) {
       return false;
     }
 
@@ -27,7 +27,7 @@ export class TvMonthlyFeeRequirement {
     if(!this.shouldCharge()) {
       throw new Error("課金不可");
     }
-    return new TvMonthlyFee(this.invoice.useYearMonth);
+    return new TvMonthlyFee(this.invoice.useYearMonth.value);
   }
 
 }

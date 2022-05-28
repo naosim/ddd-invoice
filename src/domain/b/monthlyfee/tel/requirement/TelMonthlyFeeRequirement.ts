@@ -16,7 +16,7 @@ export class TelMonthlyFeeRequirement {
       return false;
     }
 
-    if(!this.memberAndCourse.isActive(this.invoice.useYearMonth)) {
+    if(!this.memberAndCourse.isActive(this.invoice.useYearMonth.value)) {
       return false;
     }
 
@@ -27,7 +27,7 @@ export class TelMonthlyFeeRequirement {
     if(!this.shouldCharge()) {
       throw new Error("課金不可");
     }
-    return new TelMonthlyFee(this.invoice.useYearMonth);
+    return new TelMonthlyFee(this.invoice.useYearMonth.value);
   }
 
 }

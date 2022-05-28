@@ -1,4 +1,4 @@
-import { YearMonth } from "../../utils.ts";
+import { UseYearMonth } from "./UseYearMonth.ts";
 
 /**
  * 請求明細
@@ -11,7 +11,7 @@ export class Invoice {
    */
   constructor(
     readonly code: InvoiceCode,
-    readonly useYearMonth: YearMonth
+    readonly useYearMonth: UseYearMonth
   ) {}
 
 }

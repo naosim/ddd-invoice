@@ -53,11 +53,11 @@
                   "name": "useYearMonth",
                   "optional": false,
                   "tsType": {
-                    "repr": "YearMonth",
+                    "repr": "UseYearMonth",
                     "kind": "typeRef",
                     "typeRef": {
                       "typeParams": null,
-                      "typeName": "YearMonth"
+                      "typeName": "UseYearMonth"
                     }
                   }
                 }
@@ -126,9 +126,77 @@
       },
       {
         "kind": "import",
-        "name": "YearMonth",
+        "name": "UseYearMonth",
         "location": {
           "filename": "./src/domain/m/invoice.ts",
+          "line": 1,
+          "col": 0
+        },
+        "declarationKind": "private",
+        "importDef": {
+          "src": "./src/domain/m/UseYearMonth.ts",
+          "imported": "UseYearMonth"
+        }
+      }
+    ]
+  },
+  {
+    "filename": "./src/domain/m/UseYearMonth.ts",
+    "doc": [
+      {
+        "kind": "class",
+        "name": "UseYearMonth",
+        "location": {
+          "filename": "./src/domain/m/UseYearMonth.ts",
+          "line": 6,
+          "col": 0
+        },
+        "declarationKind": "export",
+        "jsDoc": {
+          "doc": "利用月"
+        },
+        "classDef": {
+          "isAbstract": false,
+          "constructors": [
+            {
+              "accessibility": null,
+              "name": "constructor",
+              "params": [
+                {
+                  "kind": "identifier",
+                  "name": "value",
+                  "optional": false,
+                  "tsType": {
+                    "repr": "YearMonth",
+                    "kind": "typeRef",
+                    "typeRef": {
+                      "typeParams": null,
+                      "typeName": "YearMonth"
+                    }
+                  }
+                }
+              ],
+              "location": {
+                "filename": "./src/domain/m/UseYearMonth.ts",
+                "line": 7,
+                "col": 2
+              }
+            }
+          ],
+          "properties": [],
+          "indexSignatures": [],
+          "methods": [],
+          "extends": null,
+          "implements": [],
+          "typeParams": [],
+          "superTypeParams": []
+        }
+      },
+      {
+        "kind": "import",
+        "name": "YearMonth",
+        "location": {
+          "filename": "./src/domain/m/UseYearMonth.ts",
           "line": 1,
           "col": 0
         },

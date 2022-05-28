@@ -51,7 +51,7 @@ class TelMonthlyFeeRequirement {
         if (!TelMonthlyFeeInvoiceCode.isTelMonthlyFee(this.invoice)) {
             return false;
         }
-        if (!this.memberAndCourse.isActive(this.invoice.useYearMonth)) {
+        if (!this.memberAndCourse.isActive(this.invoice.useYearMonth.value)) {
             return false;
         }
         return true;
@@ -60,7 +60,7 @@ class TelMonthlyFeeRequirement {
         if (!this.shouldCharge()) {
             throw new Error("課金不可");
         }
-        return new TelMonthlyFee(this.invoice.useYearMonth);
+        return new TelMonthlyFee(this.invoice.useYearMonth.value);
     }
     invoice;
     memberAndCourse;
@@ -85,7 +85,7 @@ class TvMonthlyFeeRequirement {
         if (!TvMonthlyFeeInvoiceCode.isTvMonthlyFee(this.invoice)) {
             return false;
         }
-        if (!this.memberAndCourse.isActive(this.invoice.useYearMonth)) {
+        if (!this.memberAndCourse.isActive(this.invoice.useYearMonth.value)) {
             return false;
         }
         return true;
@@ -94,7 +94,7 @@ class TvMonthlyFeeRequirement {
         if (!this.shouldCharge()) {
             throw new Error("課金不可");
         }
-        return new TvMonthlyFee(this.invoice.useYearMonth);
+        return new TvMonthlyFee(this.invoice.useYearMonth.value);
     }
     invoice;
     memberAndCourse;
@@ -108,6 +108,12 @@ class Invoice {
     useYearMonth;
 }
 class InvoiceCode {
+    constructor(value){
+        this.value = value;
+    }
+    value;
+}
+class UseYearMonth {
     constructor(value){
         this.value = value;
     }
@@ -211,7 +217,7 @@ const invoices = `
 あれ
 それ
 これ
-`.trim().split('\n').map((v)=>new Invoice(new InvoiceCode(v), new YearMonth("2022/4")));
+`.trim().split('\n').map((v)=>new Invoice(new InvoiceCode(v), new UseYearMonth(new YearMonth("2022/4"))));
 const memberAndCourse = new MemberAndCourse(new Member(YearMonthRange.create("2020/1", "2022/4")), new Course(YearMonthRange.create("2019/1", "2022/4")));
 invoices.map((invoice)=>new TvMonthlyFeeRequirement(invoice, memberAndCourse)).filter((v)=>v.shouldCharge()).map((v)=>v.createMonthlyFee());
 invoices.map((invoice)=>new TelMonthlyFeeRequirement(invoice, memberAndCourse)).filter((v)=>v.shouldCharge()).map((v)=>v.createMonthlyFee());
