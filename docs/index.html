@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<div class="mermaid">
+</div>
+<pre>
+</pre>
+<script type="module">
+import docsdata from "./docs.json" assert { type: "json" }
+const tree = {sub:{}, elements: []}
+function addToTree(element) {
+  console.log(element.id);
+  const a = element.id.split("/")
+    .slice(3, -1) // ./src/dimainを削除、ファイル名含まない
+    .reduce((memo, seg) => {
+      console.log(seg);
+    if(!memo.sub[seg]) {
+      memo.sub[seg] = {sub:{}, elements: []}
+    }
+    return memo.sub[seg];
+  }, tree);
+  // console.log(a);
+  a.elements.push(element);
+}
+
+function treeToMermaid(tree, space = "") {
+  console.log("treeToMermaid", tree);
+  const sub = Object.keys(tree.sub).map(key => {
+    return [
+      `${space}subgraph "${key}" `,
+      ...treeToMermaid(tree.sub[key], space + "  "),
+      `${space}end`
+    ]
+  }).reduce((memo, v) => [...memo, ...v], [])
+  return [
+    ...tree.elements.map(v => `${space}${v.id}["${v.label}"]`),
+    ...sub
+  ]
+  
+
+}
+
+class ClassKind {
+  constructor(data) {
+    this.data = data;
+  }
+  get label() {
+    if(!this.data.jsDoc) {
+      return this.data.name;  
+    }
+    return `・${this.data.jsDoc.doc} (${this.data.name})`;
+  }
+}
+class ImportKind {
+  constructor(data) {
+    this.data = data;
+  }
+  get from() {
+    return this.data.importDef.src;
+  }
+
+  get isDomain() {
+    return this.data.importDef.src.indexOf("/domain/") != -1;
+  }
+}
+
+const elements = [];
+const links = [];
+
+docsdata.forEach(tsFile => {
+  const classKinds = tsFile.doc.filter(v => v.kind == "class").map(v => new ClassKind(v));
+  const importKinds = tsFile.doc.filter(v => v.kind == "import").map(v => new ImportKind(v)).filter(v => v.isDomain);
+
+  var label = [tsFile.filename.split("/").slice(-1)[0], ...classKinds.map(v => v.label)].join("<br>");
+
+  const element = {id: tsFile.filename, label};
+  elements.push(element);
+  // console.log(element);
+  addToTree(element);
+  
+  importKinds.forEach(immport => {
+    links.push({
+      from: tsFile.filename,
+      to: immport.from
+    })
+  })
+})
+
+const lines = [
+  "flowchart RL",
+  ...treeToMermaid(tree),
+  ...links.map(v => `${v.from} --> ${v.to}`)
+];
+document.querySelector(".mermaid").innerHTML = lines.join("\n");
+document.querySelector("pre").innerHTML = lines.join("\n");
+
+console.log(tree);
+  </script>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});
+</script>

@@ -1,0 +1,1189 @@
+[
+  {
+    "filename": "./src/domain/m/invoice.ts",
+    "doc": [
+      {
+        "kind": "class",
+        "name": "Invoice",
+        "location": {
+          "filename": "./src/domain/m/invoice.ts",
+          "line": 6,
+          "col": 0
+        },
+        "declarationKind": "export",
+        "jsDoc": {
+          "doc": "請求明細"
+        },
+        "classDef": {
+          "isAbstract": false,
+          "constructors": [
+            {
+              "jsDoc": {
+                "tags": [
+                  {
+                    "kind": "param",
+                    "name": "code",
+                    "doc": "請求内訳コード"
+                  },
+                  {
+                    "kind": "param",
+                    "name": "useYearMonth",
+                    "doc": "利用月"
+                  }
+                ]
+              },
+              "accessibility": null,
+              "name": "constructor",
+              "params": [
+                {
+                  "kind": "identifier",
+                  "name": "code",
+                  "optional": false,
+                  "tsType": {
+                    "repr": "InvoiceCode",
+                    "kind": "typeRef",
+                    "typeRef": {
+                      "typeParams": null,
+                      "typeName": "InvoiceCode"
+                    }
+                  }
+                },
+                {
+                  "kind": "identifier",
+                  "name": "useYearMonth",
+                  "optional": false,
+                  "tsType": {
+                    "repr": "YearMonth",
+                    "kind": "typeRef",
+                    "typeRef": {
+                      "typeParams": null,
+                      "typeName": "YearMonth"
+                    }
+                  }
+                }
+              ],
+              "location": {
+                "filename": "./src/domain/m/invoice.ts",
+                "line": 12,
+                "col": 2
+              }
+            }
+          ],
+          "properties": [],
+          "indexSignatures": [],
+          "methods": [],
+          "extends": null,
+          "implements": [],
+          "typeParams": [],
+          "superTypeParams": []
+        }
+      },
+      {
+        "kind": "class",
+        "name": "InvoiceCode",
+        "location": {
+          "filename": "./src/domain/m/invoice.ts",
+          "line": 22,
+          "col": 0
+        },
+        "declarationKind": "export",
+        "jsDoc": {
+          "doc": "請求明細内訳コード"
+        },
+        "classDef": {
+          "isAbstract": false,
+          "constructors": [
+            {
+              "accessibility": null,
+              "name": "constructor",
+              "params": [
+                {
+                  "kind": "identifier",
+                  "name": "value",
+                  "optional": false,
+                  "tsType": {
+                    "repr": "string",
+                    "kind": "keyword",
+                    "keyword": "string"
+                  }
+                }
+              ],
+              "location": {
+                "filename": "./src/domain/m/invoice.ts",
+                "line": 23,
+                "col": 2
+              }
+            }
+          ],
+          "properties": [],
+          "indexSignatures": [],
+          "methods": [],
+          "extends": null,
+          "implements": [],
+          "typeParams": [],
+          "superTypeParams": []
+        }
+      },
+      {
+        "kind": "import",
+        "name": "YearMonth",
+        "location": {
+          "filename": "./src/domain/m/invoice.ts",
+          "line": 1,
+          "col": 0
+        },
+        "declarationKind": "private",
+        "importDef": {
+          "src": "./src/utils.ts",
+          "imported": "YearMonth"
+        }
+      }
+    ]
+  },
+  {
+    "filename": "./src/domain/b/monthlyfee/tel/requirement/TelMonthlyFeeRequirement.ts",
+    "doc": [
+      {
+        "kind": "class",
+        "name": "TelMonthlyFeeRequirement",
+        "location": {
+          "filename": "./src/domain/b/monthlyfee/tel/requirement/TelMonthlyFeeRequirement.ts",
+          "line": 9,
+          "col": 0
+        },
+        "declarationKind": "export",
+        "jsDoc": {
+          "doc": "電話月額課金条件"
+        },
+        "classDef": {
+          "isAbstract": false,
+          "constructors": [
+            {
+              "accessibility": null,
+              "name": "constructor",
+              "params": [
+                {
+                  "kind": "identifier",
+                  "name": "invoice",
+                  "optional": false,
+                  "tsType": {
+                    "repr": "Invoice",
+                    "kind": "typeRef",
+                    "typeRef": {
+                      "typeParams": null,
+                      "typeName": "Invoice"
+                    }
+                  }
+                },
+                {
+                  "kind": "identifier",
+                  "name": "memberAndCourse",
+                  "optional": false,
+                  "tsType": {
+                    "repr": "MemberAndCourse",
+                    "kind": "typeRef",
+                    "typeRef": {
+                      "typeParams": null,
+                      "typeName": "MemberAndCourse"
+                    }
+                  }
+                }
+              ],
+              "location": {
+                "filename": "./src/domain/b/monthlyfee/tel/requirement/TelMonthlyFeeRequirement.ts",
+                "line": 10,
+                "col": 2
+              }
+            }
+          ],
+          "properties": [],
+          "indexSignatures": [],
+          "methods": [
+            {
+              "accessibility": null,
+              "optional": false,
+              "isAbstract": false,
+              "isStatic": false,
+              "name": "shouldCharge",
+              "kind": "method",
+              "functionDef": {
+                "params": [],
+                "returnType": {
+                  "repr": "boolean",
+                  "kind": "keyword",
+                  "keyword": "boolean"
+                },
+                "isAsync": false,
+                "isGenerator": false,
+                "typeParams": []
+              },
+              "location": {
+                "filename": "./src/domain/b/monthlyfee/tel/requirement/TelMonthlyFeeRequirement.ts",
+                "line": 14,
+                "col": 2
+              }
+            },
+            {
+              "accessibility": null,
+              "optional": false,
+              "isAbstract": false,
+              "isStatic": false,
+              "name": "createMonthlyFee",
+              "kind": "method",
+              "functionDef": {
+                "params": [],
+                "returnType": {
+                  "repr": "TelMonthlyFee",
+                  "kind": "typeRef",
+                  "typeRef": {
+                    "typeParams": null,
+                    "typeName": "TelMonthlyFee"
+                  }
+                },
+                "isAsync": false,
+                "isGenerator": false,
+                "typeParams": []
+              },
+              "location": {
+                "filename": "./src/domain/b/monthlyfee/tel/requirement/TelMonthlyFeeRequirement.ts",
+                "line": 26,
+                "col": 2
+              }
+            }
+          ],
+          "extends": null,
+          "implements": [],
+          "typeParams": [],
+          "superTypeParams": []
+        }
+      },
+      {
+        "kind": "import",
+        "name": "Invoice",
+        "location": {
+          "filename": "./src/domain/b/monthlyfee/tel/requirement/TelMonthlyFeeRequirement.ts",
+          "line": 1,
+          "col": 0
+        },
+        "declarationKind": "private",
+        "importDef": {
+          "src": "./src/domain/m/invoice.ts",
+          "imported": "Invoice"
+        }
+      },
+      {
+        "kind": "import",
+        "name": "MemberAndCourse",
+        "location": {
+          "filename": "./src/domain/b/monthlyfee/tel/requirement/TelMonthlyFeeRequirement.ts",
+          "line": 2,
+          "col": 0
+        },
+        "declarationKind": "private",
+        "importDef": {
+          "src": "./src/domain/b/memberAndCourse/MemberAndCourse.ts",
+          "imported": "MemberAndCourse"
+        }
+      },
+      {
+        "kind": "import",
+        "name": "TelMonthlyFeeInvoiceCode",
+        "location": {
+          "filename": "./src/domain/b/monthlyfee/tel/requirement/TelMonthlyFeeRequirement.ts",
+          "line": 3,
+          "col": 0
+        },
+        "declarationKind": "private",
+        "importDef": {
+          "src": "./src/domain/b/monthlyfee/tel/requirement/TelMonthlyFeeInvoiceCode.ts",
+          "imported": "TelMonthlyFeeInvoiceCode"
+        }
+      },
+      {
+        "kind": "import",
+        "name": "TelMonthlyFee",
+        "location": {
+          "filename": "./src/domain/b/monthlyfee/tel/requirement/TelMonthlyFeeRequirement.ts",
+          "line": 4,
+          "col": 0
+        },
+        "declarationKind": "private",
+        "importDef": {
+          "src": "./src/domain/b/monthlyfee/tel/TelMonthlyFee.ts",
+          "imported": "TelMonthlyFee"
+        }
+      }
+    ]
+  },
+  {
+    "filename": "./src/domain/b/monthlyfee/tel/requirement/TelMonthlyFeeInvoiceCode.ts",
+    "doc": [
+      {
+        "kind": "class",
+        "name": "TelMonthlyFeeInvoiceCode",
+        "location": {
+          "filename": "./src/domain/b/monthlyfee/tel/requirement/TelMonthlyFeeInvoiceCode.ts",
+          "line": 7,
+          "col": 0
+        },
+        "declarationKind": "export",
+        "jsDoc": {
+          "doc": "電話月額課金請求コード"
+        },
+        "classDef": {
+          "isAbstract": false,
+          "constructors": [],
+          "properties": [],
+          "indexSignatures": [],
+          "methods": [
+            {
+              "accessibility": null,
+              "optional": false,
+              "isAbstract": false,
+              "isStatic": true,
+              "name": "isTelMonthlyFee",
+              "kind": "method",
+              "functionDef": {
+                "params": [
+                  {
+                    "kind": "identifier",
+                    "name": "invoice",
+                    "optional": false,
+                    "tsType": {
+                      "repr": "Invoice",
+                      "kind": "typeRef",
+                      "typeRef": {
+                        "typeParams": null,
+                        "typeName": "Invoice"
+                      }
+                    }
+                  }
+                ],
+                "returnType": null,
+                "isAsync": false,
+                "isGenerator": false,
+                "typeParams": []
+              },
+              "location": {
+                "filename": "./src/domain/b/monthlyfee/tel/requirement/TelMonthlyFeeInvoiceCode.ts",
+                "line": 8,
+                "col": 2
+              }
+            }
+          ],
+          "extends": null,
+          "implements": [],
+          "typeParams": [],
+          "superTypeParams": []
+        }
+      },
+      {
+        "kind": "import",
+        "name": "Invoice",
+        "location": {
+          "filename": "./src/domain/b/monthlyfee/tel/requirement/TelMonthlyFeeInvoiceCode.ts",
+          "line": 1,
+          "col": 0
+        },
+        "declarationKind": "private",
+        "importDef": {
+          "src": "./src/domain/m/invoice.ts",
+          "imported": "Invoice"
+        }
+      }
+    ]
+  },
+  {
+    "filename": "./src/domain/b/monthlyfee/tel/TelMonthlyFee.ts",
+    "doc": [
+      {
+        "kind": "class",
+        "name": "TelMonthlyFee",
+        "location": {
+          "filename": "./src/domain/b/monthlyfee/tel/TelMonthlyFee.ts",
+          "line": 6,
+          "col": 0
+        },
+        "declarationKind": "export",
+        "jsDoc": {
+          "doc": "電話月額課金"
+        },
+        "classDef": {
+          "isAbstract": false,
+          "constructors": [
+            {
+              "jsDoc": {
+                "tags": [
+                  {
+                    "kind": "param",
+                    "name": "useYearMonth",
+                    "doc": "利用月"
+                  }
+                ]
+              },
+              "accessibility": null,
+              "name": "constructor",
+              "params": [
+                {
+                  "kind": "identifier",
+                  "name": "useYearMonth",
+                  "optional": false,
+                  "tsType": {
+                    "repr": "YearMonth",
+                    "kind": "typeRef",
+                    "typeRef": {
+                      "typeParams": null,
+                      "typeName": "YearMonth"
+                    }
+                  }
+                }
+              ],
+              "location": {
+                "filename": "./src/domain/b/monthlyfee/tel/TelMonthlyFee.ts",
+                "line": 11,
+                "col": 2
+              }
+            }
+          ],
+          "properties": [],
+          "indexSignatures": [],
+          "methods": [],
+          "extends": null,
+          "implements": [],
+          "typeParams": [],
+          "superTypeParams": []
+        }
+      },
+      {
+        "kind": "import",
+        "name": "YearMonth",
+        "location": {
+          "filename": "./src/domain/b/monthlyfee/tel/TelMonthlyFee.ts",
+          "line": 1,
+          "col": 0
+        },
+        "declarationKind": "private",
+        "importDef": {
+          "src": "./src/utils.ts",
+          "imported": "YearMonth"
+        }
+      }
+    ]
+  },
+  {
+    "filename": "./src/domain/b/monthlyfee/tv/requirement/TvMonthlyFeeInvoiceCode.ts",
+    "doc": [
+      {
+        "kind": "class",
+        "name": "TvMonthlyFeeInvoiceCode",
+        "location": {
+          "filename": "./src/domain/b/monthlyfee/tv/requirement/TvMonthlyFeeInvoiceCode.ts",
+          "line": 7,
+          "col": 0
+        },
+        "declarationKind": "export",
+        "jsDoc": {
+          "doc": "テレビ月額課金請求コード"
+        },
+        "classDef": {
+          "isAbstract": false,
+          "constructors": [],
+          "properties": [],
+          "indexSignatures": [],
+          "methods": [
+            {
+              "accessibility": null,
+              "optional": false,
+              "isAbstract": false,
+              "isStatic": true,
+              "name": "isTvMonthlyFee",
+              "kind": "method",
+              "functionDef": {
+                "params": [
+                  {
+                    "kind": "identifier",
+                    "name": "invoice",
+                    "optional": false,
+                    "tsType": {
+                      "repr": "Invoice",
+                      "kind": "typeRef",
+                      "typeRef": {
+                        "typeParams": null,
+                        "typeName": "Invoice"
+                      }
+                    }
+                  }
+                ],
+                "returnType": null,
+                "isAsync": false,
+                "isGenerator": false,
+                "typeParams": []
+              },
+              "location": {
+                "filename": "./src/domain/b/monthlyfee/tv/requirement/TvMonthlyFeeInvoiceCode.ts",
+                "line": 8,
+                "col": 2
+              }
+            }
+          ],
+          "extends": null,
+          "implements": [],
+          "typeParams": [],
+          "superTypeParams": []
+        }
+      },
+      {
+        "kind": "import",
+        "name": "Invoice",
+        "location": {
+          "filename": "./src/domain/b/monthlyfee/tv/requirement/TvMonthlyFeeInvoiceCode.ts",
+          "line": 1,
+          "col": 0
+        },
+        "declarationKind": "private",
+        "importDef": {
+          "src": "./src/domain/m/invoice.ts",
+          "imported": "Invoice"
+        }
+      }
+    ]
+  },
+  {
+    "filename": "./src/domain/b/monthlyfee/tv/requirement/TvMonthlyFeeRequirement.ts",
+    "doc": [
+      {
+        "kind": "class",
+        "name": "TvMonthlyFeeRequirement",
+        "location": {
+          "filename": "./src/domain/b/monthlyfee/tv/requirement/TvMonthlyFeeRequirement.ts",
+          "line": 9,
+          "col": 0
+        },
+        "declarationKind": "export",
+        "jsDoc": {
+          "doc": "テレビ月額課金条件"
+        },
+        "classDef": {
+          "isAbstract": false,
+          "constructors": [
+            {
+              "accessibility": null,
+              "name": "constructor",
+              "params": [
+                {
+                  "kind": "identifier",
+                  "name": "invoice",
+                  "optional": false,
+                  "tsType": {
+                    "repr": "Invoice",
+                    "kind": "typeRef",
+                    "typeRef": {
+                      "typeParams": null,
+                      "typeName": "Invoice"
+                    }
+                  }
+                },
+                {
+                  "kind": "identifier",
+                  "name": "memberAndCourse",
+                  "optional": false,
+                  "tsType": {
+                    "repr": "MemberAndCourse",
+                    "kind": "typeRef",
+                    "typeRef": {
+                      "typeParams": null,
+                      "typeName": "MemberAndCourse"
+                    }
+                  }
+                }
+              ],
+              "location": {
+                "filename": "./src/domain/b/monthlyfee/tv/requirement/TvMonthlyFeeRequirement.ts",
+                "line": 10,
+                "col": 2
+              }
+            }
+          ],
+          "properties": [],
+          "indexSignatures": [],
+          "methods": [
+            {
+              "accessibility": null,
+              "optional": false,
+              "isAbstract": false,
+              "isStatic": false,
+              "name": "shouldCharge",
+              "kind": "method",
+              "functionDef": {
+                "params": [],
+                "returnType": {
+                  "repr": "boolean",
+                  "kind": "keyword",
+                  "keyword": "boolean"
+                },
+                "isAsync": false,
+                "isGenerator": false,
+                "typeParams": []
+              },
+              "location": {
+                "filename": "./src/domain/b/monthlyfee/tv/requirement/TvMonthlyFeeRequirement.ts",
+                "line": 14,
+                "col": 2
+              }
+            },
+            {
+              "accessibility": null,
+              "optional": false,
+              "isAbstract": false,
+              "isStatic": false,
+              "name": "createMonthlyFee",
+              "kind": "method",
+              "functionDef": {
+                "params": [],
+                "returnType": {
+                  "repr": "TvMonthlyFee",
+                  "kind": "typeRef",
+                  "typeRef": {
+                    "typeParams": null,
+                    "typeName": "TvMonthlyFee"
+                  }
+                },
+                "isAsync": false,
+                "isGenerator": false,
+                "typeParams": []
+              },
+              "location": {
+                "filename": "./src/domain/b/monthlyfee/tv/requirement/TvMonthlyFeeRequirement.ts",
+                "line": 26,
+                "col": 2
+              }
+            }
+          ],
+          "extends": null,
+          "implements": [],
+          "typeParams": [],
+          "superTypeParams": []
+        }
+      },
+      {
+        "kind": "import",
+        "name": "Invoice",
+        "location": {
+          "filename": "./src/domain/b/monthlyfee/tv/requirement/TvMonthlyFeeRequirement.ts",
+          "line": 1,
+          "col": 0
+        },
+        "declarationKind": "private",
+        "importDef": {
+          "src": "./src/domain/m/invoice.ts",
+          "imported": "Invoice"
+        }
+      },
+      {
+        "kind": "import",
+        "name": "MemberAndCourse",
+        "location": {
+          "filename": "./src/domain/b/monthlyfee/tv/requirement/TvMonthlyFeeRequirement.ts",
+          "line": 2,
+          "col": 0
+        },
+        "declarationKind": "private",
+        "importDef": {
+          "src": "./src/domain/b/memberAndCourse/MemberAndCourse.ts",
+          "imported": "MemberAndCourse"
+        }
+      },
+      {
+        "kind": "import",
+        "name": "TvMonthlyFeeInvoiceCode",
+        "location": {
+          "filename": "./src/domain/b/monthlyfee/tv/requirement/TvMonthlyFeeRequirement.ts",
+          "line": 3,
+          "col": 0
+        },
+        "declarationKind": "private",
+        "importDef": {
+          "src": "./src/domain/b/monthlyfee/tv/requirement/TvMonthlyFeeInvoiceCode.ts",
+          "imported": "TvMonthlyFeeInvoiceCode"
+        }
+      },
+      {
+        "kind": "import",
+        "name": "TvMonthlyFee",
+        "location": {
+          "filename": "./src/domain/b/monthlyfee/tv/requirement/TvMonthlyFeeRequirement.ts",
+          "line": 4,
+          "col": 0
+        },
+        "declarationKind": "private",
+        "importDef": {
+          "src": "./src/domain/b/monthlyfee/tv/TvMonthlyFee.ts",
+          "imported": "TvMonthlyFee"
+        }
+      }
+    ]
+  },
+  {
+    "filename": "./src/domain/b/monthlyfee/tv/TvMonthlyFee.ts",
+    "doc": [
+      {
+        "kind": "class",
+        "name": "TvMonthlyFee",
+        "location": {
+          "filename": "./src/domain/b/monthlyfee/tv/TvMonthlyFee.ts",
+          "line": 6,
+          "col": 0
+        },
+        "declarationKind": "export",
+        "jsDoc": {
+          "doc": "テレビ月額課金"
+        },
+        "classDef": {
+          "isAbstract": false,
+          "constructors": [
+            {
+              "jsDoc": {
+                "tags": [
+                  {
+                    "kind": "param",
+                    "name": "useYearMonth",
+                    "doc": "利用月"
+                  }
+                ]
+              },
+              "accessibility": null,
+              "name": "constructor",
+              "params": [
+                {
+                  "kind": "identifier",
+                  "name": "useYearMonth",
+                  "optional": false,
+                  "tsType": {
+                    "repr": "YearMonth",
+                    "kind": "typeRef",
+                    "typeRef": {
+                      "typeParams": null,
+                      "typeName": "YearMonth"
+                    }
+                  }
+                }
+              ],
+              "location": {
+                "filename": "./src/domain/b/monthlyfee/tv/TvMonthlyFee.ts",
+                "line": 11,
+                "col": 2
+              }
+            }
+          ],
+          "properties": [],
+          "indexSignatures": [],
+          "methods": [],
+          "extends": null,
+          "implements": [],
+          "typeParams": [],
+          "superTypeParams": []
+        }
+      },
+      {
+        "kind": "import",
+        "name": "YearMonth",
+        "location": {
+          "filename": "./src/domain/b/monthlyfee/tv/TvMonthlyFee.ts",
+          "line": 1,
+          "col": 0
+        },
+        "declarationKind": "private",
+        "importDef": {
+          "src": "./src/utils.ts",
+          "imported": "YearMonth"
+        }
+      }
+    ]
+  },
+  {
+    "filename": "./src/domain/b/member.ts",
+    "doc": [
+      {
+        "kind": "class",
+        "name": "Member",
+        "location": {
+          "filename": "./src/domain/b/member.ts",
+          "line": 6,
+          "col": 0
+        },
+        "declarationKind": "export",
+        "jsDoc": {
+          "doc": "会員"
+        },
+        "classDef": {
+          "isAbstract": false,
+          "constructors": [
+            {
+              "accessibility": null,
+              "name": "constructor",
+              "params": [
+                {
+                  "kind": "identifier",
+                  "name": "activeRange",
+                  "optional": false,
+                  "tsType": {
+                    "repr": "YearMonthRange",
+                    "kind": "typeRef",
+                    "typeRef": {
+                      "typeParams": null,
+                      "typeName": "YearMonthRange"
+                    }
+                  }
+                }
+              ],
+              "location": {
+                "filename": "./src/domain/b/member.ts",
+                "line": 7,
+                "col": 2
+              }
+            }
+          ],
+          "properties": [],
+          "indexSignatures": [],
+          "methods": [
+            {
+              "accessibility": null,
+              "optional": false,
+              "isAbstract": false,
+              "isStatic": false,
+              "name": "isActive",
+              "kind": "method",
+              "functionDef": {
+                "params": [
+                  {
+                    "kind": "identifier",
+                    "name": "yearMonth",
+                    "optional": false,
+                    "tsType": {
+                      "repr": "YearMonth",
+                      "kind": "typeRef",
+                      "typeRef": {
+                        "typeParams": null,
+                        "typeName": "YearMonth"
+                      }
+                    }
+                  }
+                ],
+                "returnType": {
+                  "repr": "boolean",
+                  "kind": "keyword",
+                  "keyword": "boolean"
+                },
+                "isAsync": false,
+                "isGenerator": false,
+                "typeParams": []
+              },
+              "location": {
+                "filename": "./src/domain/b/member.ts",
+                "line": 9,
+                "col": 2
+              }
+            }
+          ],
+          "extends": null,
+          "implements": [],
+          "typeParams": [],
+          "superTypeParams": []
+        }
+      },
+      {
+        "kind": "import",
+        "name": "YearMonth",
+        "location": {
+          "filename": "./src/domain/b/member.ts",
+          "line": 1,
+          "col": 0
+        },
+        "declarationKind": "private",
+        "importDef": {
+          "src": "./src/utils.ts",
+          "imported": "YearMonth"
+        }
+      },
+      {
+        "kind": "import",
+        "name": "YearMonthRange",
+        "location": {
+          "filename": "./src/domain/b/member.ts",
+          "line": 1,
+          "col": 0
+        },
+        "declarationKind": "private",
+        "importDef": {
+          "src": "./src/utils.ts",
+          "imported": "YearMonthRange"
+        }
+      }
+    ]
+  },
+  {
+    "filename": "./src/domain/b/course.ts",
+    "doc": [
+      {
+        "kind": "class",
+        "name": "Course",
+        "location": {
+          "filename": "./src/domain/b/course.ts",
+          "line": 6,
+          "col": 0
+        },
+        "declarationKind": "export",
+        "jsDoc": {
+          "doc": "コース"
+        },
+        "classDef": {
+          "isAbstract": false,
+          "constructors": [
+            {
+              "accessibility": null,
+              "name": "constructor",
+              "params": [
+                {
+                  "kind": "identifier",
+                  "name": "activeRange",
+                  "optional": false,
+                  "tsType": {
+                    "repr": "YearMonthRange",
+                    "kind": "typeRef",
+                    "typeRef": {
+                      "typeParams": null,
+                      "typeName": "YearMonthRange"
+                    }
+                  }
+                }
+              ],
+              "location": {
+                "filename": "./src/domain/b/course.ts",
+                "line": 7,
+                "col": 2
+              }
+            }
+          ],
+          "properties": [],
+          "indexSignatures": [],
+          "methods": [
+            {
+              "accessibility": null,
+              "optional": false,
+              "isAbstract": false,
+              "isStatic": false,
+              "name": "isInCourse",
+              "kind": "method",
+              "functionDef": {
+                "params": [
+                  {
+                    "kind": "identifier",
+                    "name": "yearMonth",
+                    "optional": false,
+                    "tsType": {
+                      "repr": "YearMonth",
+                      "kind": "typeRef",
+                      "typeRef": {
+                        "typeParams": null,
+                        "typeName": "YearMonth"
+                      }
+                    }
+                  }
+                ],
+                "returnType": {
+                  "repr": "boolean",
+                  "kind": "keyword",
+                  "keyword": "boolean"
+                },
+                "isAsync": false,
+                "isGenerator": false,
+                "typeParams": []
+              },
+              "location": {
+                "filename": "./src/domain/b/course.ts",
+                "line": 9,
+                "col": 2
+              }
+            }
+          ],
+          "extends": null,
+          "implements": [],
+          "typeParams": [],
+          "superTypeParams": []
+        }
+      },
+      {
+        "kind": "import",
+        "name": "YearMonth",
+        "location": {
+          "filename": "./src/domain/b/course.ts",
+          "line": 1,
+          "col": 0
+        },
+        "declarationKind": "private",
+        "importDef": {
+          "src": "./src/utils.ts",
+          "imported": "YearMonth"
+        }
+      },
+      {
+        "kind": "import",
+        "name": "YearMonthRange",
+        "location": {
+          "filename": "./src/domain/b/course.ts",
+          "line": 1,
+          "col": 0
+        },
+        "declarationKind": "private",
+        "importDef": {
+          "src": "./src/utils.ts",
+          "imported": "YearMonthRange"
+        }
+      }
+    ]
+  },
+  {
+    "filename": "./src/domain/b/memberAndCourse/MemberAndCourse.ts",
+    "doc": [
+      {
+        "kind": "class",
+        "name": "MemberAndCourse",
+        "location": {
+          "filename": "./src/domain/b/memberAndCourse/MemberAndCourse.ts",
+          "line": 8,
+          "col": 1
+        },
+        "declarationKind": "export",
+        "jsDoc": {
+          "doc": "会員とコース"
+        },
+        "classDef": {
+          "isAbstract": false,
+          "constructors": [
+            {
+              "accessibility": null,
+              "name": "constructor",
+              "params": [
+                {
+                  "kind": "identifier",
+                  "name": "member",
+                  "optional": false,
+                  "tsType": {
+                    "repr": "Member",
+                    "kind": "typeRef",
+                    "typeRef": {
+                      "typeParams": null,
+                      "typeName": "Member"
+                    }
+                  }
+                },
+                {
+                  "kind": "identifier",
+                  "name": "course",
+                  "optional": false,
+                  "tsType": {
+                    "repr": "Course",
+                    "kind": "typeRef",
+                    "typeRef": {
+                      "typeParams": null,
+                      "typeName": "Course"
+                    }
+                  }
+                }
+              ],
+              "location": {
+                "filename": "./src/domain/b/memberAndCourse/MemberAndCourse.ts",
+                "line": 9,
+                "col": 2
+              }
+            }
+          ],
+          "properties": [],
+          "indexSignatures": [],
+          "methods": [
+            {
+              "accessibility": null,
+              "optional": false,
+              "isAbstract": false,
+              "isStatic": false,
+              "name": "isActive",
+              "kind": "method",
+              "functionDef": {
+                "params": [
+                  {
+                    "kind": "identifier",
+                    "name": "yearMonth",
+                    "optional": false,
+                    "tsType": {
+                      "repr": "YearMonth",
+                      "kind": "typeRef",
+                      "typeRef": {
+                        "typeParams": null,
+                        "typeName": "YearMonth"
+                      }
+                    }
+                  }
+                ],
+                "returnType": null,
+                "isAsync": false,
+                "isGenerator": false,
+                "typeParams": []
+              },
+              "location": {
+                "filename": "./src/domain/b/memberAndCourse/MemberAndCourse.ts",
+                "line": 10,
+                "col": 2
+              }
+            }
+          ],
+          "extends": null,
+          "implements": [],
+          "typeParams": [],
+          "superTypeParams": []
+        }
+      },
+      {
+        "kind": "import",
+        "name": "YearMonth",
+        "location": {
+          "filename": "./src/domain/b/memberAndCourse/MemberAndCourse.ts",
+          "line": 1,
+          "col": 0
+        },
+        "declarationKind": "private",
+        "importDef": {
+          "src": "./src/utils.ts",
+          "imported": "YearMonth"
+        }
+      },
+      {
+        "kind": "import",
+        "name": "Course",
+        "location": {
+          "filename": "./src/domain/b/memberAndCourse/MemberAndCourse.ts",
+          "line": 2,
+          "col": 0
+        },
+        "declarationKind": "private",
+        "importDef": {
+          "src": "./src/domain/b/course.ts",
+          "imported": "Course"
+        }
+      },
+      {
+        "kind": "import",
+        "name": "Member",
+        "location": {
+          "filename": "./src/domain/b/memberAndCourse/MemberAndCourse.ts",
+          "line": 3,
+          "col": 0
+        },
+        "declarationKind": "private",
+        "importDef": {
+          "src": "./src/domain/b/member.ts",
+          "imported": "Member"
+        }
+      }
+    ]
+  }
+]
