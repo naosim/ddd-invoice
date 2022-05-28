@@ -8,5 +8,5 @@ export class TvMonthlyFee {
    * 
    * @param useYearMonth 利用月
    */
-  constructor(readonly useYearMonth: YearMonth) {}
+  constructor(private readonly useYearMonth: YearMonth) {}
 }
